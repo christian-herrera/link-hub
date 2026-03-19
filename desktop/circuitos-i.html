@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Hub - Acortador de URLs</title>
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="/desktop/manifest.json">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Link Hub</h1>
+                <p class="subtitle">Enlaces a los sitios mas usados</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Links Grid -->
+            <section class="links-section">
+                <a href="/desktop" class="back-button" aria-label="Volver a inicio">&larr; Volver</a>
+                <h2>Asignatura: Circuitos Electronicos I</h2>
+                <div class="links-grid">
+                    <!-- Iconos: https://iconos8.es/icons -->
+                    <!-- Moodle -->
+                    <a href="https://www.asignaturas.ing.unlp.edu.ar/course/view.php?id=6424" class="link-button" target="_blank">
+                        <div class="button-icon">
+                            <img src="/assets/images/moodle.svg" alt="Moodle">
+                        </div>
+                        <div class="button-title">Moodle</div>
+                        <div class="button-description">Sitio web de la asignatura</div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 LinkHub - Gestor moderno de enlaces</p>
+        </footer>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/assets/js/sw.js');
+        }
+    </script>
+</body>
+
+</html>

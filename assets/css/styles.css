@@ -1,0 +1,289 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --light-bg: #f8f9fa;
+    --dark-text: #2c3e50;
+    --light-text: #7f8c8d;
+    --border-color: #e0e0e0;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+
+    --container-pad: 20px;
+    --header-pad: 30px 20px;
+    --header-mb: 40px;
+    --header-radius: 0 0 20px 20px;
+    --logo-size: 48px;
+    --subtitle-size: 18px;
+    --main-gap: 40px;
+    --main-mb: 40px;
+    --h2-size: 24px;
+    --h2-mb: 25px;
+    --grid-min: 300px;
+    --grid-gap: 20px;
+    --card-pad: 30px 25px;
+    --card-radius: 15px;
+    --icon-size: 48px;
+    --icon-mb: 15px;
+    --title-size: 18px;
+    --title-mb: 8px;
+    --desc-size: 14px;
+    --footer-pad: 25px;
+    --footer-font: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background: var(--primary-gradient);
+    color: #fff;
+    padding: var(--header-pad);
+    text-align: center;
+    margin-bottom: var(--header-mb);
+    border-radius: var(--header-radius);
+    box-shadow: var(--shadow);
+    animation: slideDown 0.6s ease;
+}
+
+.header-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: var(--logo-size);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: var(--subtitle-size);
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--main-gap);
+    margin-bottom: var(--main-mb);
+}
+
+.links-section {
+    opacity: 0;
+    animation: fadeIn 0.6s ease 0.4s forwards;
+}
+
+.links-section h2 {
+    font-size: var(--h2-size);
+    margin-bottom: var(--h2-mb);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #d8dce5;
+    background: #fff;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.back-button:hover {
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateX(-3px);
+}
+
+.back-button:focus-visible {
+    outline: 3px solid rgba(102, 126, 234, 0.3);
+    outline-offset: 2px;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--grid-min), 1fr));
+    gap: var(--grid-gap);
+}
+
+.link-button {
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: var(--card-radius);
+    padding: var(--card-pad);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: scaleIn 0.4s ease;
+}
+
+.link-button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
+    border-color: #667eea;
+}
+
+.link-button:active {
+    transform: translateY(-4px);
+}
+
+.button-icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--icon-size);
+    line-height: 1;
+    margin-bottom: var(--icon-mb);
+    transition: var(--transition);
+}
+
+.button-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.link-button:hover .button-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.button-title {
+    font-size: var(--title-size);
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: var(--title-mb);
+}
+
+.button-description {
+    font-size: var(--desc-size);
+    color: var(--light-text);
+    line-height: 1.4;
+}
+
+.footer {
+    background: #fff;
+    padding: var(--footer-pad);
+    font-size: var(--footer-font);
+    text-align: center;
+    color: var(--light-text);
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-pad: 15px;
+        --header-pad: 40px 20px;
+        --header-mb: 30px;
+        --header-radius: 0 0 15px 15px;
+        --logo-size: 36px;
+        --subtitle-size: 16px;
+        --h2-size: 20px;
+        --h2-mb: 20px;
+        --grid-min: 250px;
+        --grid-gap: 15px;
+        --card-pad: 25px 20px;
+        --icon-size: 40px;
+        --icon-mb: 12px;
+        --title-size: 16px;
+        --desc-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --header-pad: 30px 15px;
+        --logo-size: 28px;
+        --subtitle-size: 14px;
+        --h2-size: 18px;
+        --h2-mb: 15px;
+        --grid-min: 100%;
+        --grid-gap: 12px;
+        --card-pad: 20px 18px;
+        --icon-size: 36px;
+        --icon-mb: 10px;
+        --title-size: 15px;
+        --desc-size: 12px;
+        --footer-pad: 20px 15px;
+        --footer-font: 14px;
+    }
+}
