@@ -24,25 +24,26 @@
         <main class="main">
             <!-- Links Grid -->
             <section class="links-section">
-                <a href="/desktop" class="back-button" aria-label="Volver a inicio">&larr; Volver</a>
-                <h2>Asignatura: Control Automático II</h2>
+                <h2>Links y Apps</h2>
                 <div class="links-grid">
-                    <!-- Moodle -->
-                    <a href="https://www.asignaturas.ing.unlp.edu.ar/course/view.php?id=6404" class="link-button" target="_blank">
+                    <!-- Calculadora para alimentación -->
+                    <a href="#" class="link-button" onclick="abrirSheets('18KEgYkkZW5Q0Ujeal9olv1-PCSIsKR2D')">
                         <div class="button-icon">
-                            <img src="/assets/images/moodle.svg" alt="Moodle">
+                            <img src="/assets/images/excel.svg" alt="Moodle">
                         </div>
-                        <div class="button-title">Moodle</div>
-                        <div class="button-description">Sitio web de la asignatura</div>
+                        <div class="button-title">KCal-Culator</div>
+                        <div class="button-description">Hoja de cálculo para alimentación</div>
                     </a>
 
-                    <!-- Libro: Ing. de control moderna -->
-                    <a href="https://drive.google.com/file/d/1LLwal-Yfn1vDkxygpmgNm2DeAkJi7rnX/view?usp=sharing" class="link-button" target="_blank">
+
+                    <!-- Rutina de ejercicios -->
+                    <a href="#" class="link-button"
+                        onclick="abrirSheets('1XOR8t8mh8mhkRw7FudBKcddQicEKkFBMkIpWOm7YD4M')">
                         <div class="button-icon">
-                            <img src="/assets/images/book.svg" alt="Libro">
+                            <img src="/assets/images/excel.svg" alt="Moodle">
                         </div>
-                        <div class="button-title">Libro</div>
-                        <div class="button-description">Ingenieria de Control Moderna</div>
+                        <div class="button-title">Rutina Gym</div>
+                        <div class="button-description">Hoja de cálculo para rutina de ejercicios</div>
                     </a>
                 </div>
             </section>
@@ -56,6 +57,16 @@
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/assets/js/sw.js');
+        }
+
+        function abrirSheets(id) {
+            const isAndroid = /Android/i.test(navigator.userAgent);
+
+            if (isAndroid) {// Intent → abre app
+                window.location.href = "intent://docs.google.com/spreadsheets/d/" + id + "#Intent;scheme=https;package=com.google.android.apps.docs.editors.sheets;end";
+            } else {// Link normal → PC / otros dispositivos
+                window.location.href = "https://docs.google.com/spreadsheets/d/" + id;
+            }
         }
     </script>
 </body>
